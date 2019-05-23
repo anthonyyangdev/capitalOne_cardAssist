@@ -8,8 +8,6 @@ import './App.css';
 import CardItem from './CardItem'
 function App() {
   return (
-    
-
 
     <div className="App">
       <header className="App-header">
@@ -28,7 +26,7 @@ function App() {
         </a>
         
       </header>
-      <CardItem></CardItem>
+      <CardItem bank = "Capital One" fee = "0" apr = "0"></CardItem>
       <div>
         <AppBar position="static">
           <Toolbar>
