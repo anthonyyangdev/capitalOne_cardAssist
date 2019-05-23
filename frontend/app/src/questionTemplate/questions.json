@@ -1,0 +1,120 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "header": "Let's get to know you.",
+      "question": "I am a...",
+      "type": "checkBox",
+      "answers": [
+        "Student",
+        "Looking for my first card",
+        "Already have a card"
+      ],
+      "next": [
+        {
+          "id": 2,
+          "condition": [
+            "Student",
+            "Looking for my first card"
+          ],
+          "filter": {
+            "isStudent": true,
+            "firstTime": true
+          }
+        },
+        {
+          "id": 3,
+          "condition": [
+            "Student",
+            "Already have a card"
+          ],
+          "filter": {
+            "isStudent": true,
+            "firstTime": false
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "header": "Student Credit Card",
+      "question": "Does this interest you?",
+      "type": "yesNo",
+      "answers": [],
+      "next": [
+        {
+          "id": -1,
+          "condition": [
+            "yes"
+          ],
+          "filter": {
+            "wantsStudentCredit": true
+          }
+        },
+        {
+          "id": -1,
+          "condition": [
+            "no"
+          ],
+          "filter": {
+            "wantsStudentCredit": false
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "header": "Student Credit Card",
+      "question": "Do you have a student card?",
+      "type": "yesNo",
+      "answers": [],
+      "next": [
+        {
+          "id": 4,
+          "condition": [
+            "yes"
+          ],
+          "filter": {
+            "hasStudentCard": true
+          }
+        },
+        {
+          "id": 4,
+          "condition": [
+            "no"
+          ],
+          "filter": {
+            "hasStudentCard": false
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "header": "Credit Score",
+      "question": "What is your credit score like?",
+      "type": "checkBox",
+      "answers": [],
+      "next": [
+        {
+          "id": 4,
+          "condition": [
+            "yes"
+          ],
+          "filter": {
+            "wantsStudentCredit": true
+          }
+        },
+        {
+          "id": 4,
+          "condition": [
+            "no"
+          ],
+          "filter": {
+            "wantsStudentCredit": false
+          }
+        }
+      ]
+    }
+  ]
+}

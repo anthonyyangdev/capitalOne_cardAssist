@@ -1,0 +1,22 @@
+{
+  "id": "question id number",
+  "question": "Add your question here",
+  "type": "yesNo || checkBox",
+  "answers": [
+    {
+      "answer": "Insert choice here."
+    },
+    {
+      "answer": "Insert another choice here."
+    }
+  ],
+  "next": [
+    {
+      "id": "id value of next question",
+      "condition": [
+        "If the question was type yesNo, then condition is an array of one element: either the string 'yes' or 'no'.",
+        "Else, conditions should be an array of the index numbers of choices to be chosen."
+      ]
+    }
+  ]
+}

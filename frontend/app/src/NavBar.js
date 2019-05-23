@@ -5,7 +5,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
-import Home from './Home';
+import QuestionPage from './questionTemplate/QuestionPage'
+import FirstQuestion from './questionTemplate/questions/FirstQuestion'
+// import Home from './Home';
 
 function TabContainer(props) {
   return (
@@ -43,9 +45,18 @@ function NavBar() {
           <Tab label="Learn" />
         </Tabs>
       </AppBar>
-      {value === 0 && <TabContainer><Home></Home></TabContainer>}
-      {value === 1 && <TabContainer>Learn</TabContainer>}
-      {value === 2 && <TabContainer>Get a Credit Card</TabContainer>}
+      {value === 0 &&
+        <TabContainer>
+          Home Page
+        </TabContainer>}
+      {value === 1 &&
+        <TabContainer>
+          <FirstQuestion />
+        </TabContainer>}
+      {value === 2 &&
+        <TabContainer>
+          Get a Credit Card
+        </TabContainer>}
     </div>
   );
 }
