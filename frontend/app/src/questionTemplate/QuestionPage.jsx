@@ -4,18 +4,26 @@ import CheckBoxForm from './answerTemplates/CheckBoxForm';
 import Box from '@material-ui/core/Box'
 
 const backgroundStyle = {
-  style: 'blue'
+  backgroundColor: '#33ccff'
 }
+
+const checkBox = 'checkBox'
+const yesNo = 'yesNo'
 
 class QuestionPage extends Component {
   constructor(props) {
     super(props)
     // const question = this.props.question
     // const choices = this.props.choices
+    // this.state = {question, choices}
     this.state = {
+      filter: {
+        isStudent: null,
+        isBusiness: null,
+      },
       question: 'Who are you?',
+      type: 'yesNo',
       choices: {
-        type: 'yesNo',
         answers: [
           {
             answer: 'qwe'
@@ -48,15 +56,28 @@ class QuestionPage extends Component {
   }
 
   renderAnswerTemplate() {
-    switch (this.state.choices.type) {
-      case 'checkBox':
+    switch (this.state.type) {
+      case checkBox:
         return (
           <CheckBoxForm answers={this.state.choices.answers} />)
-      case 'yesNo':
+      case yesNo:
         return <YesNoForm />
       default:
         console.log("Error")
         throw "Not valid path."
+    }
+  }
+
+  nextQuestion(answer) {
+    // answer will be an array
+    const type = this.state.type
+    switch (type) {
+      case checkBox:
+
+      case yesNo:
+
+      default:
+        throw "Not valid path in next Questions."
     }
   }
 
