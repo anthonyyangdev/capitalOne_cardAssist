@@ -7,14 +7,12 @@ import Button from '@material-ui/core/Button'
 import './App.css';
 import CardItem from './CardItem'
 import TestDatabaseCall from './TestDatabaseCall'
-import QuestionPage from './questionTemplate/QuestionPage'
+import GetToKnow from './questionTemplate/GetToKnow'
 function App() {
   return (
 
-
-
     <div className="App">
-      <header className="App-header">
+      {/*}<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -29,20 +27,20 @@ function App() {
 
         </a>
 
-      </header>
-      <QuestionPage/>
-      // <TestDatabaseCall></TestDatabaseCall>
-      // <CardItem></CardItem>
-      // <div>
-      //   <AppBar position="static">
-      //     <Toolbar>
-      //       <Typography variant="title" color="inherit">
-      //         React &amp; Material-UI Sample Application
-      //           </Typography>
-      //     </Toolbar>
-      //     <Button>Hello World</Button>
-      //   </AppBar>
-      // </div>
+      </header>*/}
+      <GetToKnow/>
+      {/*<TestDatabaseCall></TestDatabaseCall>
+      <CardItem></CardItem>
+      <div>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="title" color="inherit">
+              React &amp; Material-UI Sample Application
+                </Typography>
+          </Toolbar>
+          <Button>Hello World</Button>
+        </AppBar>
+      </div>*/}
 
     </div>
   );

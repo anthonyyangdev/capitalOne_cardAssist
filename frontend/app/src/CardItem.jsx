@@ -22,29 +22,28 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
-//Currently has sample data, would have apr, fee, bank etc as params
-function CardItem() {
+//Currently has limited params
+function CardItem(props) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Capital One
+          {props.bank}
         </Typography>
         <Typography variant="h5" component="h2">
-        Secured Mastercard
+        {props.name}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Annual fee: $0
+          APR: {props.apr}%
+          Fee: ${props.fee}
         </Typography>
         <Typography variant="body2" component="p">
-        Refundable deposit of $49, $99 or $200 gets you a $200 initial credit line. 
-        Access a higher credit line by making your first 5 monthly payments on time.
+        {props.description}
         </Typography>
       </CardContent>
-      // Button would hyperlink to site
+      {/* Button would hyperlink to site */}
       <CardActions>
         <Button size="small">Learn More</Button>
       </CardActions>
