@@ -10,6 +10,9 @@ import FirstQuestion from './questionTemplate/questions/FirstQuestion'
 import YesNoForm from './questionTemplate/answerTemplates/YesNoForm'
 import BotFooter from './Footer/BotFooter'
 import NavBar from './NavBar'
+import CardItem from './CardItem'
+import TestDatabaseCall from './TestDatabaseCall'
+import firebase from 'firebase'
 
 class App extends Component {
 
@@ -26,7 +29,10 @@ class App extends Component {
   render() {
     return (
 
+
+
       <grid className='App'>
+      <TestDatabaseCall></TestDatabaseCall>
         <NavBar style={{ gridArea: 'header' }} />
         {/* <p style={{ gridArea: 'header' }}>Header</p> */}
         {/* <FirstQuestion style={{
@@ -38,11 +44,10 @@ class App extends Component {
     );
   }
 }
-// import CardItem from './CardItem'
-// import TestDatabaseCall from './TestDatabaseCall'
+
 // function App() {
 //   return (
-
+//
 //     <div className="App">
 //       <header className="App-header">
 //         <img src={logo} className="App-logo" alt="logo" />
@@ -56,9 +61,9 @@ class App extends Component {
 //           rel="noopener noreferrer"
 //         >
 //           Learn React
-
+//
 //         </a>
-
+//
 //       </header>
 //       <TestDatabaseCall></TestDatabaseCall>
 //       <CardItem bank = "Capital One" fee = "0" apr = "0"></CardItem>

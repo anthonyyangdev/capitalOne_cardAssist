@@ -22,20 +22,16 @@ const useStyles = makeStyles({
   },
 });
 
-var apr = "";
 //Currently has sample data, would have apr, fee, bank etc as params
 function CardItem() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
   var ref = firebase.database().ref();
+  var companyNames = "";
 
   ref.orderByChild("company").on("child_added", function(data) {
-    var apr = data.val().standardAPR;
-    var company=data.val().company;
-    if (apr <= 25){
-      console.log(apr + company);
-    }
+    companyNames += data.val().company + " ";
   });
 
 
@@ -43,7 +39,7 @@ function CardItem() {
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Gimme some APRs, bud:
+
         </Typography>
       </CardContent>
     </Card>
