@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button'
 
 class CheckBoxForm extends Component {
 
@@ -10,14 +11,24 @@ class CheckBoxForm extends Component {
     this.renderChoice = this.renderChoice.bind(this)
   }
 
-  renderChoice(choice) {
-    return <p>Answer Choice</p>
+  renderChoice() {
+    var row = []
+    for (const choice in this.state.answers) {
+      row.push(
+        <div>
+          <input type='checkbox' value={choice} />
+          {this.state.answers[choice].answer}
+        </div>
+      )
+    }
+    row.push(<Button color='primary'>Continue</Button>)
+    return row
   }
 
   render() {
     return (
       <Box>
-        {this.state.answers.map(choice => this.renderChoice)}
+        {this.renderChoice()}
       </Box>
     )
   }

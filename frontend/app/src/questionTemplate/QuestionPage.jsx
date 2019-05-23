@@ -10,16 +10,38 @@ const backgroundStyle = {
 class QuestionPage extends Component {
   constructor(props) {
     super(props)
-    const question = this.props.question
-    const choices = this.props.choices
-    this.state = { question, choices }
+    // const question = this.props.question
+    // const choices = this.props.choices
+    this.state = {
+      question: 'Who are you?',
+      choices: {
+        type: 'yesNo',
+        answers: [
+          {
+            answer: 'qwe'
+          },
+          {
+            answer: 'wqe'
+          },
+          {
+            answer: 'weq'
+          },
+          {
+            answer: '234'
+          }
+        ]
+      }
+    }
     this.renderQuestion = this.renderQuestion.bind(this)
     this.renderAnswerTemplate = this.renderAnswerTemplate.bind(this)
   }
 
   renderQuestion() {
     return (
-      <Box>
+      <Box style={{
+        width: '50%',
+        margin: '0 auto'
+      }}>
         <p>{this.state.question}</p>
       </Box>
     )
@@ -28,9 +50,10 @@ class QuestionPage extends Component {
   renderAnswerTemplate() {
     switch (this.state.choices.type) {
       case 'checkBox':
-        return <CheckBoxForm></CheckBoxForm>
+        return (
+          <CheckBoxForm answers={this.state.choices.answers} />)
       case 'yesNo':
-        return <YesNoForm></YesNoForm>
+        return <YesNoForm />
       default:
         console.log("Error")
         throw "Not valid path."
