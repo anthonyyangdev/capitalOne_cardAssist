@@ -11,26 +11,26 @@ const backgroundStyle = {
   height: '500px'
 }
 
-class HasStudentCard extends Component {
+class WantSecuredCard extends Component {
   constructor(props) {
     super(props)
   }
 
   renderHeader() {
-    return <h1>Student Credit Card</h1>
+    return <h1>Secured Credit Card</h1>
   }
 
   renderQuestion() {
-    return
+    return <p>Would you be interested in a secured credit card?</p>
   }
 
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 12)}>
+        <Button onClick={() => this.props.next({}, 4)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 12)}>
+        <Button onClick={() => this.props.next({}, 4)}>
           No
       </Button>
       </div>
@@ -53,4 +53,4 @@ class HasStudentCard extends Component {
   }
 }
 
-export default HasStudentCard
+export default WantSecuredCard

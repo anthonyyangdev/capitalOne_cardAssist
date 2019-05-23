@@ -11,7 +11,7 @@ const backgroundStyle = {
   height: '500px'
 }
 
-class HasStudentCard extends Component {
+class WantStudentCard extends Component {
   constructor(props) {
     super(props)
   }
@@ -27,10 +27,10 @@ class HasStudentCard extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 12)}>
+        <Button onClick={() => this.props.next({}, 9)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 12)}>
+        <Button onClick={() => this.props.next({}, 9)}>
           No
       </Button>
       </div>
@@ -53,4 +53,4 @@ class HasStudentCard extends Component {
   }
 }
 
-export default HasStudentCard
+export default WantStudentCard

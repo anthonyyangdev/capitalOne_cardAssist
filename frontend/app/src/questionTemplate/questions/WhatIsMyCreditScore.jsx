@@ -12,64 +12,54 @@ const backgroundStyle = {
   height: '500px'
 }
 
-class GetToKnowYou extends Component {
+class WhatIsMyCreditScore extends Component {
   constructor(props) {
     super(props)
     this.state = {
       answers: [
-        'Student',
-        'Business',
-        'First-time card seeker',
-        'Current/previous card holder (inluding joint card with parents)',
-        'None of the Above'
+        'Excellent',
+        'Good',
+        'Ok',
+        'Bad'
       ]
     }
   }
 
   renderHeader() {
-    return <h1>Let's Get to Know You</h1>
+    return <h1>Credit Score</h1>
   }
 
   renderQuestion() {
-    return <p>I am a...</p>
+    return <p>How is your current credit score?</p>
   }
 
   renderChoice() {
-    var row = []
-    for (const choice in this.state.answers) {
-      row.push(
-        <div>
-          <input type='checkbox' value={choice} />
-          {this.state.answers[choice]}
-        </div>
-      )
-    }
-    return row
+    return <div>
+      <Button onClick={() => this.props.next({}, 11)}>
+        Excellent</Button> <br />
+      <Button onClick={() => this.props.next({}, 11)}>
+        Good</Button> <br />
+      <Button onClick={() => this.props.next({}, 11)}>
+        Mediocre</Button> <br />
+      <Button onClick={() => this.props.next({}, 9)}>
+        Bad</Button> <br />
+    </div>
   }
+
 
   renderAnswerTemplate() {
     return this.renderChoice()
   }
 
-  renderNext() {
-    return (
-      <Button color='primary' onClick={() => this.props.next({}, 3)}>
-        Continue
-    </Button>
-    )
-  }
-
   render() {
     return (
       <div style={backgroundStyle}>
-        {/* Place your question in here */}
         {this.renderHeader()}
         {this.renderQuestion()}
         {this.renderAnswerTemplate()}
-        {this.renderNext()}
       </div>
     )
   }
 }
 
-export default GetToKnowYou
+export default WhatIsMyCreditScore

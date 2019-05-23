@@ -1,8 +1,4 @@
 import React, { Component } from 'react'
-import QuestionPage from '../QuestionPage'
-import YesNoForm from '../answerTemplates/YesNoForm';
-import CheckBoxForm from '../answerTemplates/CheckBoxForm';
-import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 
 const backgroundStyle = {
@@ -11,26 +7,26 @@ const backgroundStyle = {
   height: '500px'
 }
 
-class HasStudentCard extends Component {
+class WantTransferFees extends Component {
   constructor(props) {
     super(props)
   }
 
   renderHeader() {
-    return <h1>Student Credit Card</h1>
+    return <h1>Transfer Fees</h1>
   }
 
   renderQuestion() {
-    return
+    return <p>Are you okay with transfer fees?</p>
   }
 
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 12)}>
+        <Button onClick={() => this.props.next({}, 8)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 12)}>
+        <Button onClick={() => this.props.next({}, 8)}>
           No
       </Button>
       </div>
@@ -53,4 +49,4 @@ class HasStudentCard extends Component {
   }
 }
 
-export default HasStudentCard
+export default WantTransferFees

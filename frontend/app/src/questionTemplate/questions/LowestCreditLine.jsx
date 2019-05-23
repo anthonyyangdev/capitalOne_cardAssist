@@ -5,40 +5,43 @@ import CheckBoxForm from '../answerTemplates/CheckBoxForm';
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 
+
 const backgroundStyle = {
   padding: '30px',
   backgroundColor: '#33ccff',
   height: '500px'
 }
 
-class HasStudentCard extends Component {
+class LowestCreditLine extends Component {
   constructor(props) {
     super(props)
   }
 
   renderHeader() {
-    return <h1>Student Credit Card</h1>
+    return <h1>Credit Line</h1>
   }
 
   renderQuestion() {
-    return
+    return <p>What is the lowest credit line that you want?</p>
   }
 
-  renderAnswerTemplate() {
+  renderChoice() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 12)}>
-          Yes
-      </Button> <br />
-        <Button onClick={() => this.props.next({}, 12)}>
-          No
-      </Button>
+        <Button onClick={() => this.props.next({}, 7)}>
+          At least $200</Button> <br />
+        <Button onClick={() => this.props.next({}, 7)}>
+          At least $500</Button> <br />
+        <Button onClick={() => this.props.next({}, 7)}>
+          At least $1000</Button> <br />
+        <Button onClick={() => this.props.next({}, 7)}>
+          At least $5000</Button> <br />
       </div>
     )
   }
 
-  renderNext() {
-    return
+  renderAnswerTemplate() {
+    return this.renderChoice()
   }
 
   render() {
@@ -53,4 +56,4 @@ class HasStudentCard extends Component {
   }
 }
 
-export default HasStudentCard
+export default LowestCreditLine
