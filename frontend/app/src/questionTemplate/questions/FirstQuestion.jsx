@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button'
 const backgroundStyle = {
   padding: '30px',
   backgroundColor: '#33ccff',
-  height: '1000px'
+  height: '500px'
 }
 
 class FirstQuestion extends Component {
@@ -27,10 +27,10 @@ class FirstQuestion extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button>
+        <Button onClick={() => this.props.next({}, 2)}>
           I want to Learn about Credit Cards
       </Button> <br />
-        <Button>
+        <Button onClick={() => this.props.next({}, 2)}>
           I want to Browse Credit Cards
       </Button>
       </div>
@@ -48,7 +48,6 @@ class FirstQuestion extends Component {
         {this.renderHeader()}
         {this.renderQuestion()}
         {this.renderAnswerTemplate()}
-        {this.renderNext()}
       </div>
     )
   }

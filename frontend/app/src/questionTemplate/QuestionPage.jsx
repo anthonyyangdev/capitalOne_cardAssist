@@ -2,91 +2,55 @@ import React, { Component } from 'react';
 import YesNoForm from './answerTemplates/YesNoForm';
 import CheckBoxForm from './answerTemplates/CheckBoxForm';
 import Box from '@material-ui/core/Box'
+import FirstQuestion from './questions/FirstQuestion';
+import GetToKnowYou from './questions/GetToKnowYou';
+import HasStudentCard from './questions/HasStudentCard';
 
 const backgroundStyle = {
   backgroundColor: '#33ccff'
 }
 
-const checkBox = 'checkBox'
-const yesNo = 'yesNo'
-
 class QuestionPage extends Component {
   constructor(props) {
     super(props)
-    // const question = this.props.question
-    // const choices = this.props.choices
-    // this.state = {question, choices}
     this.state = {
       filter: {
         isStudent: null,
+        isSecured: null,
+        creditScore: 0,
+        annualFee: null,
+        aprRange: 1.0,
+        cashBack: null,
+        balanceTransfer: null,
+        transferFee: null,
+
+        // For future-proofing
         isBusiness: null,
       },
-      question: 'Who are you?',
-      type: 'yesNo',
-      choices: {
-        answers: [
-          {
-            answer: 'qwe'
-          },
-          {
-            answer: 'wqe'
-          },
-          {
-            answer: 'weq'
-          },
-          {
-            answer: '234'
-          }
-        ]
-      }
+      page: 1
     }
     this.renderQuestion = this.renderQuestion.bind(this)
-    this.renderAnswerTemplate = this.renderAnswerTemplate.bind(this)
   }
 
   renderQuestion() {
-    return (
-      <Box style={{
-        width: '50%',
-        margin: '0 auto'
-      }}>
-        <p>{this.state.question}</p>
-      </Box>
-    )
-  }
-
-  renderAnswerTemplate() {
-    switch (this.state.type) {
-      case checkBox:
-        return (
-          <CheckBoxForm answers={this.state.choices.answers} />)
-      case yesNo:
-        return <YesNoForm />
-      default:
-        console.log("Error")
-        throw "Not valid path."
+    switch (this.state.page) {
+      case 1: return <FirstQuestion next={(up, i) => this.nextQuestion(up, i)} />
+      case 2: return <GetToKnowYou next={(up, i) => this.nextQuestion(up, i)} />
+      case 3: return <HasStudentCard next={(up, i) => this.nextQuestion(up, i)} />
+      
+      default: throw "No room"
     }
   }
 
-  nextQuestion(answer) {
-    // answer will be an array
-    const type = this.state.type
-    switch (type) {
-      case checkBox:
-
-      case yesNo:
-
-      default:
-        throw "Not valid path in next Questions."
-    }
+  nextQuestion(updates, i) {
+    console.log("Going to next question", i)
+    this.setState({ ...updates, page: i })
   }
 
   render() {
     return (
       <div style={backgroundStyle}>
-        {/* Place your question in here */}
         {this.renderQuestion()}
-        {this.renderAnswerTemplate()}
       </div>
     )
   }

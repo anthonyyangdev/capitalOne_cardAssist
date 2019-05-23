@@ -51,7 +51,7 @@ function NavBar() {
         </TabContainer>}
       {value === 1 &&
         <TabContainer>
-          <FirstQuestion />
+          <QuestionPage />
         </TabContainer>}
       {value === 2 &&
         <TabContainer>
