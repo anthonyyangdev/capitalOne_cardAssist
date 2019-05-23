@@ -22,8 +22,10 @@ class App extends Component {
     console.log("Opening the Bot")
   }
 
+
   render() {
     return (
+
       <grid className='App'>
         <NavBar style={{ gridArea: 'header' }} />
         {/* <p style={{ gridArea: 'header' }}>Header</p> */}
