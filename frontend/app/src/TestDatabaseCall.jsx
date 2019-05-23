@@ -30,10 +30,11 @@ function CardItem() {
 
   var ref = firebase.database().ref();
 
-  ref.orderByChild("standardAPR").on("child_added", function(data) {
+  ref.orderByChild("company").on("child_added", function(data) {
     var apr = data.val().standardAPR;
+    var company=data.val().company;
     if (apr <= 25){
-      console.log(apr);
+      console.log(apr + company);
     }
   });
 

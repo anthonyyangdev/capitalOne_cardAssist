@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button'
 import './App.css';
 import CardItem from './CardItem'
 import TestDatabaseCall from './TestDatabaseCall'
+import QuestionPage from './questionTemplate/QuestionPage'
 function App() {
   return (
 
@@ -29,18 +30,20 @@ function App() {
         </a>
 
       </header>
-      <TestDatabaseCall></TestDatabaseCall>
-      <CardItem></CardItem>
-      <div>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="title" color="inherit">
-              React &amp; Material-UI Sample Application
-                </Typography>
-          </Toolbar>
-          <Button>Hello World</Button>
-        </AppBar>
-      </div>
+      <QuestionPage/>
+      // <TestDatabaseCall></TestDatabaseCall>
+      // <CardItem></CardItem>
+      // <div>
+      //   <AppBar position="static">
+      //     <Toolbar>
+      //       <Typography variant="title" color="inherit">
+      //         React &amp; Material-UI Sample Application
+      //           </Typography>
+      //     </Toolbar>
+      //     <Button>Hello World</Button>
+      //   </AppBar>
+      // </div>
+
     </div>
   );
 }
