@@ -13,7 +13,9 @@ const config = {
 class Firebase{
   constructor() {
     app.initializeApp(config);
+
+    this.db = app.database();
   }
 }
 
-export default Firebase;t 
+export default Firebase;t
