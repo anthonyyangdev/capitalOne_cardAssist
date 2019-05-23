@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import './App.css';
 import CardItem from './CardItem'
+import TestDatabaseCall from './TestDatabaseCall'
 function App() {
   return (
 
@@ -24,8 +25,9 @@ function App() {
           Learn React
 
         </a>
-        
+
       </header>
+      <TestDatabaseCall></TestDatabaseCall>
       <CardItem bank = "Capital One" fee = "0" apr = "0"></CardItem>
       <div>
         <AppBar position="static">
