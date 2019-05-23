@@ -1,4 +1,5 @@
 import app from 'firebase/app'
+import 'firebase/database'
 
 const config = {
   apiKey: "AIzaSyBX9gu9YMYSVMM6YWEc3-q8a9WLw-TgtRI",
@@ -18,4 +19,4 @@ class Firebase{
   }
 }
 
-export default Firebase;t
+export default Firebase;
