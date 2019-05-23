@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-gap: 10px;
+  padding: 10px;
+  height: 100vh;
 }
 
 .App-logo {
@@ -31,3 +39,4 @@
     transform: rotate(360deg);
   }
 }
+
