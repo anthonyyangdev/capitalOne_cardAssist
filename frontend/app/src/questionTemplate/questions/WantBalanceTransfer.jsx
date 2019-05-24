@@ -17,10 +17,11 @@ class WantBalanceTransfer extends Component {
   }
 
   renderQuestion() {
-    return <p>Are you looking to make a balance transfer to a new card?
-    Certain cards may or may not charge a small fee to do so (such as 3% of the balance to be transferred).
-    Your card issuer might offer a lower APR on your transferred balance for a certain period of time
-    (known as an intro transfer APR)</p>
+    return <p>Are you looking to make a balance transfer to a new card? This will often involve a balance transfer fee.
+    Many cards will offer a lower APR on your transferred balance for a certain period of time
+    (known as an intro transfer APR). If this is your first credit card,
+    it's likely you do not need to worry about balance transfers.</p>
+    //Change "if first credit card" to "since first credit card" once we have the data
   }
 
   renderAnswerTemplate() {

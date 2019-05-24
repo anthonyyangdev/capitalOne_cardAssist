@@ -17,7 +17,7 @@ class WantTransferFees extends Component {
   }
 
   renderQuestion() {
-    return <p>Are you okay with transfer fees?</p>
+    return <p>Are you okay with transfer fees? Credit cards will often charge small transfer fees, such as 3% of the transferred balance, but some can be found that charge no fee to transfer a balance.</p>
   }
 
   renderAnswerTemplate() {
