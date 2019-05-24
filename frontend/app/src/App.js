@@ -32,7 +32,6 @@ class App extends Component {
 
 
       <grid className='App'>
-      <TestDatabaseCall></TestDatabaseCall>
         <NavBar style={{ gridArea: 'header' }} />
         {/* <p style={{ gridArea: 'header' }}>Header</p> */}
         {/* <FirstQuestion style={{

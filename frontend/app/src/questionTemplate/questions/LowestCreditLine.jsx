@@ -18,11 +18,11 @@ class LowestCreditLine extends Component {
   }
 
   renderHeader() {
-    return <h1>Credit Line</h1>
+    return <h1>Credit Limit</h1>
   }
 
   renderQuestion() {
-    return <p>What is the lowest credit line that you want?</p>
+    return <p>When you're approved for a card, you'll start with the minimum credit limit that may vary depending on your credit-trustworthiness. You can usually increase your credit line by making payments on time and thus proving trustworthiness to your card issuer. While you may not need a large line of credit, it is often ideal to have a high credit limit because low credit utilization helps raise your credit score. Student and secured cards will often have smaller amounts. Is there a minimum credit limit you would like?</p>
   }
 
   renderChoice() {
@@ -36,6 +36,8 @@ class LowestCreditLine extends Component {
           At least $1000</Button> <br />
         <Button onClick={() => this.props.next({}, 7)}>
           At least $5000</Button> <br />
+        <Button onClick={() => this.props.next({}, 7)}>
+          Don't care</Button>
       </div>
     )
   }
