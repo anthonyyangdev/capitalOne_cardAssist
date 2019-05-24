@@ -10,6 +10,7 @@ const backgroundStyle = {
 class WantStudentCard extends Component {
   constructor(props) {
     super(props)
+    this.handleNext = this.handleNext.bind(this)
   }
 
   renderHeader() {
@@ -20,13 +21,21 @@ class WantStudentCard extends Component {
     return <p></p>
   }
 
+  handleNext(bool) {
+    if (this.props.hasCard === false) {
+      this.props.next({ wantStudentCard: bool }, 9)
+    } else {
+      this.props.next({ wantStudentCard: bool }, 12)
+    }
+  }
+
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 9)}>
+        <Button onClick={() => this.handleNext(true)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 9)}>
+        <Button onClick={() => this.handleNext(false)}>
           No
       </Button>
       </div>

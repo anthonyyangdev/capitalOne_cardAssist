@@ -27,10 +27,10 @@ class WantBalanceTransfer extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 10)}>
+        <Button onClick={() => this.props.next({ wantBalanceTransfer: true }, 10)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 8)}>
+        <Button onClick={() => this.props.next({ wantBalanceTransfer: false }, 8)}>
           No
       </Button>
       </div>

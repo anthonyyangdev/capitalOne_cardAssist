@@ -11,7 +11,6 @@ import WantSecuredCard from './questions/WantSecuredCard'
 import WantTransferFees from './questions/WantTransferFees'
 import WantTravelRewardCard from './questions/WantTravelRewardCard'
 import WhatIsMyCreditScore from './questions/WhatIsMyCreditScore'
-import HasStudentCard from './questions/HasStudentCard'
 
 const backgroundStyle = {
   backgroundColor: '#33ccff'
@@ -23,11 +22,12 @@ class QuestionPage extends Component {
     this.state = {
       filter: {
         isStudent: null,
-        isSecured: null,
-        hasStudentCard: null,
-        creditScore: 0,
+        wantSecured: null,
+        hasCard: null,
+        wantStudentCard: null,
+        creditScore: null,
         wantAnnualFee: null,
-        aprRange: 1.0,
+        aprRange: 100,
         wantCashBack: null,
         wantBalanceTransfer: null,
         wantTransferFee: null,
@@ -42,11 +42,14 @@ class QuestionPage extends Component {
   }
 
   renderQuestion() {
+    console.log("Filters", this.state)
     const func = (up, i) => this.nextQuestion(up, i)
     switch (this.state.page) {
       case 1: return <FirstQuestion next={func} />
       case 2: return <GetToKnowYou next={func} />
-      case 3: return <WantStudentCard next={func} />
+      case 3: return <WantStudentCard
+        hasCard={this.state.filter.hasCard}
+        next={func} />
       case 4: return <LowestCreditLine next={func} />
       case 5: return <WantAnnualFees next={func} />
       case 6: return <WantAPRRange next={func} />
@@ -56,13 +59,15 @@ class QuestionPage extends Component {
       case 10: return <WantTransferFees next={func} />
       case 11: return <WantTravelRewardCard next={func} />
       case 12: return <WhatIsMyCreditScore next={func} />
-      case 13: return <HasStudentCard next={func} />
+      // case 13: return <HasStudentCard next={func} />
       default: throw "Not the correct path."
     }
   }
 
   nextQuestion(updates, i) {
-    this.setState({ ...updates, page: i })
+    console.log("Updates", updates)
+    const newFilter = { ...this.state.filter, ...updates }
+    this.setState({ filter: newFilter, page: i })
   }
 
   render() {

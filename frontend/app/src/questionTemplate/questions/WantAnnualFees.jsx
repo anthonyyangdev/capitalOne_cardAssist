@@ -23,10 +23,10 @@ class WantAnnualFees extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 6)}>
+        <Button onClick={() => this.props.next({ wantAnnualFees: true }, 6)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 6)}>
+        <Button onClick={() => this.props.next({ wantAnnualFees: false}, 6)}>
           No
       </Button>
       </div>

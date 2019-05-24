@@ -8,9 +8,13 @@ const backgroundStyle = {
   height: '500px'
 }
 
+var select = [false, false, false, false, false]
+
 class GetToKnowYou extends Component {
   constructor(props) {
     super(props)
+    this.handleNextPage = this.handleNextPage.bind(this)
+    this.updateValue = this.updateValue.bind(this)
     this.state = {
       answers: [
         'Student',
@@ -30,12 +34,37 @@ class GetToKnowYou extends Component {
     return <p>I am a...</p>
   }
 
+  updateValue(e) {
+    const value = e.target.value
+    switch (value) {
+      case 0: 
+        select[0] = true
+        select[1] = false
+      case 1:
+        select[0] = false
+        select[1] = true
+      case 2: 
+        select[3] = false
+        select[2] = true
+      case 3:
+        select[3] = true
+        select[2] = false
+      case 4:
+        select[0] = false
+        select[1] = false
+        select[2] = false
+        select[3] = false
+        select[4] = true
+    }
+  }
+
   renderChoice() {
     var row = []
     for (const choice in this.state.answers) {
       row.push(
         <div>
-          <input type='checkbox' value={choice} />
+          <input type='checkbox' value={choice}
+            onChange={e => this.updateValue(e)} />
           {this.state.answers[choice]}
         </div>
       )
@@ -47,9 +76,14 @@ class GetToKnowYou extends Component {
     return this.renderChoice()
   }
 
+  handleNextPage() {
+
+    this.props.next({}, 3)
+  }
+
   renderNext() {
     return (
-      <Button color='primary' onClick={() => this.props.next({}, 3)}>
+      <Button color='primary' onClick={() => this.handleNextPage()}>
         Continue
     </Button>
     )

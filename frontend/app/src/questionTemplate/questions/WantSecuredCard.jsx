@@ -24,10 +24,10 @@ class WantSecuredCard extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 4)}>
+        <Button onClick={() => this.props.next({ wantSecured: true }, 4)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 4)}>
+        <Button onClick={() => this.props.next({ wantSecured: false }, 4)}>
           No
       </Button>
       </div>

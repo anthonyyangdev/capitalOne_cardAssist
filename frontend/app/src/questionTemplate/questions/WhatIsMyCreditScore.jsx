@@ -31,14 +31,14 @@ class WhatIsMyCreditScore extends Component {
 
   renderChoice() {
     return <div>
-      <Button onClick={() => this.props.next({}, 11)}>
+      <Button onClick={() => this.props.next({ creditScore: "Excellent" }, 11)}>
         Excellent</Button> <br />
-      <Button onClick={() => this.props.next({}, 11)}>
+      <Button onClick={() => this.props.next({ creditScore: "Good" }, 11)}>
         Good</Button> <br />
-      <Button onClick={() => this.props.next({}, 11)}>
-        Mediocre</Button> <br />
-      <Button onClick={() => this.props.next({}, 9)}>
-        Bad</Button> <br />
+      <Button onClick={() => this.props.next({ creditScore: "Fair" }, 11)}>
+        Fair</Button> <br />
+      <Button onClick={() => this.props.next({ creditScore: "Poor" }, 9)}>
+        Poor</Button> <br />
     </div>
   }
 

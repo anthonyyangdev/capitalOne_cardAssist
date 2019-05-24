@@ -23,10 +23,10 @@ class WantTravelRewardCard extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 4)}>
+        <Button onClick={() => this.props.next({ wantTravelReward: true }, 4)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 4)}>
+        <Button onClick={() => this.props.next({wantTravelReward: false}, 4)}>
           No
       </Button>
       </div>

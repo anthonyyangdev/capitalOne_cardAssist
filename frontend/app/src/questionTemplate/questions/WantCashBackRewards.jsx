@@ -23,10 +23,10 @@ class WantCashBackRewards extends Component {
   renderAnswerTemplate() {
     return (
       <div>
-        <Button onClick={() => this.props.next({}, 5)}>
+        <Button onClick={() => this.props.next({ wantCashBack: true }, 5)}>
           Yes
       </Button> <br />
-        <Button onClick={() => this.props.next({}, 5)}>
+        <Button onClick={() => this.props.next({ wantCashBack: false }, 5)}>
           No
       </Button>
       </div>
