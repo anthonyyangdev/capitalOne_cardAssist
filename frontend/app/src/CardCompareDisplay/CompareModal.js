@@ -44,9 +44,9 @@ const file = [
     "lateFee": 39,
     "annualFee": 0,
     "rewards": "TRUE",
-    "rewardsDetails": "$20 statement credit for GPA >= 3.0 up to next 5 years. Cash back match at end of first year.",
+    "rewardsDetails": "$20 statement credit for GPA >= 3.0 up to next 5 years.",
     "cashback": 1.5,
-    "cashbackDetails": "2% at gas stations/restaurants up to 1000$ each quarter. 1% unlimited on all other purchases.",
+    "cashbackDetails": "2% at gas stations/restaurants. 1% unlimited on all other purchases.",
     "creditHistory": "limited",
     "creditLimit": "500 or more",
     "studentCard": "TRUE",
@@ -161,7 +161,7 @@ const file = [
     "rewards": "FALSE",
     "rewardsDetails": "NULL",
     "cashback": 1.5,
-    "cashbackDetails": "2% gas/restaurants up to $1000 purchases quarterly. 1% on everything else",
+    "cashbackDetails": "2% gas/restaurants. 1% on everything else",
     "creditHistory": "limited",
     "creditLimit": 200,
     "studentCard": "FALSE",
@@ -178,6 +178,9 @@ function getModalStyle() {
   return {
     top: `${top}%`,
     left: `${left}%`,
+    overflow:'scroll',
+    height:'100%',
+    display:'block',
     transform: `translate(-${top}%, -${left}%)`
   };
 }
@@ -197,9 +200,7 @@ const getCardList = (cards) => {
   var cardList = [];
   for (let i = 0; i < file.length; i++) {
     let card = file[i];
-    console.log(card);
-    console.log(cards);
-    if (cards.includes(card.company)) {
+    if (cards.includes(card.typeOfCard)) {
       cardList.push(card);
     }
   }
