@@ -13,11 +13,13 @@ class WantTravelRewardCard extends Component {
   }
 
   renderHeader() {
-    return <h1>Travel/Reward Card</h1>
+    return <h1>Travel & Rewards Card</h1>
   }
 
   renderQuestion() {
-    return <p>Do you want a travel reward card?</p>
+    return <p>If your credit score is high enough, you may qualify for cards that offer rewards points for purchases,
+    which can often be redeemed for things like flights, hotels, restaurant food, and more. Others might offer high cash back
+    rates at places you frequent such as grocery stores or gas stations. </p>
   }
 
   renderAnswerTemplate() {

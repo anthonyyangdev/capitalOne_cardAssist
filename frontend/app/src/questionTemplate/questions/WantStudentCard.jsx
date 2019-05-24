@@ -17,7 +17,10 @@ class WantStudentCard extends Component {
   }
 
   renderQuestion() {
-    return <p></p>
+    return <p>Student credit cards exist to allow students with little to no credit history to begin building their credit early.
+    They often provide benefits particularly useful to students such as no annual fees, low interest rates,
+    or even rewards for good grades. The assumption of limited credit history means these cards are easier to be approved for,
+    but it also means the credit limits are typically lower. Are you interested in a card like this?</p>
   }
 
   renderAnswerTemplate() {

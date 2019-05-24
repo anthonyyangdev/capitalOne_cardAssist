@@ -14,11 +14,12 @@ class WantAPRRange extends Component {
   }
 
   renderHeader() {
-    return <h1>APR Range</h1>
+    return <h1>APR</h1>
   }
 
   renderQuestion() {
-    return <p>What APR range are you looking for?</p>
+    return <p>Are you looking for a particular APR? Many cards actually have a range of variable APRs. Paying less interest on your monthly payments is obviously better,
+     but depending on how specific the rest of your criteria is, this might narrow your results quite a lot.</p>
   }
 
   renderChoice() {
@@ -29,6 +30,8 @@ class WantAPRRange extends Component {
         Less than 25%</Button> <br />
       <Button onClick={() => this.props.next({}, 1)}>
         Less than 20%</Button> <br />
+      <Button onClick={() => this.props.next({}, 1)}>
+        Any</Button>
     </div>
   }
 
