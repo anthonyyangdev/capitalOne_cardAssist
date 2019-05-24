@@ -24,13 +24,13 @@ class WantAPRRange extends Component {
 
   renderChoice() {
     return <div>
-      <Button onClick={() => this.props.next({}, 1)}>
+      <Button onClick={() => this.props.next({ aprRange: 30 }, 13)}>
         Less than 30%</Button> <br />
-      <Button onClick={() => this.props.next({}, 1)}>
+      <Button onClick={() => this.props.next({ aprRange: 25 }, 13)}>
         Less than 25%</Button> <br />
-      <Button onClick={() => this.props.next({}, 1)}>
+      <Button onClick={() => this.props.next({ aprRange: 20 }, 13)}>
         Less than 20%</Button> <br />
-      <Button onClick={() => this.props.next({}, 1)}>
+      <Button onClick={() => this.props.next({ aprRange: 15 }, 13)}>
         Any</Button>
     </div>
   }
