@@ -11,6 +11,7 @@ import WantSecuredCard from './questions/WantSecuredCard'
 import WantTransferFees from './questions/WantTransferFees'
 import WantTravelRewardCard from './questions/WantTravelRewardCard'
 import WhatIsMyCreditScore from './questions/WhatIsMyCreditScore'
+import BankResults from '../Results/BankResults'
 
 const backgroundStyle = {
   backgroundColor: '#33ccff'
@@ -59,7 +60,7 @@ class QuestionPage extends Component {
       case 10: return <WantTransferFees next={func} />
       case 11: return <WantTravelRewardCard next={func} />
       case 12: return <WhatIsMyCreditScore next={func} />
-      case 13: return <HasStudentCard next={func} />
+      case 13: return <BankResults />
       default: throw "Not the correct path."
     }
   }
