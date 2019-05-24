@@ -24,12 +24,15 @@ class QuestionPage extends Component {
       filter: {
         isStudent: null,
         isSecured: null,
+        hasStudentCard: null,
         creditScore: 0,
-        annualFee: null,
+        wantAnnualFee: null,
         aprRange: 1.0,
-        cashBack: null,
-        balanceTransfer: null,
-        transferFee: null,
+        wantCashBack: null,
+        wantBalanceTransfer: null,
+        wantTransferFee: null,
+        wantTravelReward: null,
+
         // For future-proofing
         isBusiness: null,
       },
