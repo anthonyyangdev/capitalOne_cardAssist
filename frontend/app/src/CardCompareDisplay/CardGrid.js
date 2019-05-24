@@ -1,7 +1,7 @@
-import React from './node_modules/react';
-import PropTypes from './node_modules/prop-types';
-import { withStyles } from './node_modules/@material-ui/core/styles';
-import Grid from './node_modules/@material-ui/core/Grid';
+import React from 'react';
+import PropTypes from '../../node_modules/prop-types';
+import { withStyles } from '../../node_modules/@material-ui/core/styles';
+import Grid from '../../node_modules/@material-ui/core/Grid';
 import CardTable from './CardTable'
 
 
@@ -34,7 +34,7 @@ class CardGrid extends React.Component {
     const { spacing } = this.state;
     const features = {company: "Company", type: "Type of Card", stud: "Student card", trav: "Travel card", 
     rewards: "Rewards card", annFee: "Annual fee", cash: "Cash back" };
-
+    console.log(this.props.cards);
     return (
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>

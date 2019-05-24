@@ -1,12 +1,11 @@
-import React from './node_modules/react';
-import { makeStyles } from './node_modules/@material-ui/core/styles';
-import Table from './node_modules/@material-ui/core/Table';
-import TableBody from './node_modules/@material-ui/core/TableBody';
-import TableCell from './node_modules/@material-ui/core/TableCell';
-import TableHead from './node_modules/@material-ui/core/TableHead';
-import TableRow from './node_modules/@material-ui/core/TableRow';
-import Paper from './node_modules/@material-ui/core/Paper';
-import { NavigationMenu } from 'material-ui/svg-icons';
+import React from 'react';
+import { makeStyles } from '../../node_modules/@material-ui/core/styles';
+import Table from '../../node_modules/@material-ui/core/Table';
+import TableBody from '../../node_modules/@material-ui/core/TableBody';
+import TableCell from '../../node_modules/@material-ui/core/TableCell';
+import TableHead from '../../node_modules/@material-ui/core/TableHead';
+import TableRow from '../../node_modules/@material-ui/core/TableRow';
+import Paper from '../../node_modules/@material-ui/core/Paper';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,7 +23,6 @@ const useStyles = makeStyles(theme => ({
   const classes = useStyles();
   //const cardArr = Object.values(cardObj);
   const cardArr = Object.values(props.cardObj);
-  const cardObject = props.cardObj;
   var checkmark = '✔';
   var xmark = '✗';
   return (
@@ -43,6 +41,11 @@ const useStyles = makeStyles(theme => ({
                 </TableCell>
               </TableRow>
             ))}
+             <TableRow key={0}>
+                <TableCell component="th" scope="row">
+                  
+                </TableCell>
+              </TableRow>
           </TableBody>
       </Table>
     </Paper>
