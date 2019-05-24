@@ -8,6 +8,7 @@ class BankListing extends Component {
   }
 
   renderEachCard() {
+    var row = []
     var data=fs.readFileSync('creditCards.json', 'utf8');
     var results = JSON.parse(data);
     for (const card in results) {
