@@ -21,7 +21,10 @@ class CheckBoxForm extends Component {
         </div>
       )
     }
-    row.push(<Button color='primary'>Continue</Button>)
+    row.push(
+      <Button color='primary'>
+        Continue
+      </Button>)
     return row
   }
 

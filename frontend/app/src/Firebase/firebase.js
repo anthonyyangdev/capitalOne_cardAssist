@@ -11,7 +11,7 @@ const config = {
   appId: "1:150007916872:web:eeb6760dd602e3de"
 };
 
-class Firebase{
+class Firebase {
   constructor() {
     app.initializeApp(config);
 

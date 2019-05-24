@@ -6,8 +6,8 @@ class YesNoForm extends Component {
 
   constructor(props) {
     super(props)
-    //    const answers = this.props.answers
   }
+
   render() {
     return (<Box>
       <Button color="primary">
