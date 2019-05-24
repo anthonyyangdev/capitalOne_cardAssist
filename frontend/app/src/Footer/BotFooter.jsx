@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
+import Popper from './Popper'
+
 
 class BotFooter extends Component {
 
@@ -12,9 +14,7 @@ class BotFooter extends Component {
   render() {
     return (
       <Box>
-        <Button onClick={this.openBot}>
-          Open Bot
-        </Button>
+        <Popper></Popper>
       </Box>
     )
   }
