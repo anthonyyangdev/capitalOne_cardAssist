@@ -13,11 +13,14 @@ class WantBalanceTransfer extends Component {
   }
 
   renderHeader() {
-    return <h1>Balance Transfer Fees</h1>
+    return <h1>Balance Transfers</h1>
   }
 
   renderQuestion() {
-    return <p>Are you looking to make balance transfer fees?</p>
+    return <p>Are you looking to make a balance transfer to a new card?
+    Certain cards may or may not charge a small fee to do so (such as 3% of the balance to be transferred).
+    Your card issuer might offer a lower APR on your transferred balance for a certain period of time
+    (known as an intro transfer APR)</p>
   }
 
   renderAnswerTemplate() {
