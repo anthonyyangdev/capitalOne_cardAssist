@@ -30,10 +30,10 @@ function CardItem(props) {
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5" component="h2">
-        {props.bank.typeOfCard}
+          {props.bank.typeOfCard}
         </Typography>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-        {props.bank.company}
+          {props.bank.company}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           <p>APR: {props.bank.standardAPR}%</p>
@@ -52,9 +52,12 @@ function CardItem(props) {
         <Button
           size="small"
           onClick={() => window.open(props.bank.link, "_blank")}>
-            Learn More
+          Learn More
           </Button>
       </CardActions>
+      {/* <CardContent>
+        {props.checkBox} Check to Compare
+      </CardContent> */}
     </Card>
   );
 }
