@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import './App.css';
-import QuestionPage from './questionTemplate/QuestionPage'
-import FirstQuestion from './questionTemplate/questions/FirstQuestion'
-import YesNoForm from './questionTemplate/answerTemplates/YesNoForm'
 import BotFooter from './Footer/BotFooter'
 import NavBar from './NavBar'
-import CardItem from './CardItem'
-import TestDatabaseCall from './TestDatabaseCall'
-import firebase from 'firebase'
 
 class App extends Component {
 
