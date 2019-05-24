@@ -31,10 +31,9 @@ class CardGrid extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { spacing } = this.state;
-    const features = {company: "Company", type: "Type of Card", stud: "Student card", trav: "Travel card", 
-    rewards: "Rewards card", annFee: "Annual fee", cash: "Cash back" };
-    console.log(this.props.cards);
+    const features = {CardType: "Card Type", ann: "Annual Fee", stud: "Student Card", trav: "Travel Card", 
+    sec: "Secured Card", sAPR: "Standard APR", rewards: "Rewards Card", reDetails: "Rewards Details", 
+    cashb: "Cash Back", cashbDetails: "Cash Back Details" };
     return (
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
