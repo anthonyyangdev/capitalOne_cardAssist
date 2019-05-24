@@ -6,6 +6,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import card1 from './resources/capital-one-secured.png';
+import card2 from './resources/discover-it-secured.png';
+import card3 from './resources/capital-one-venture.png';
+import card4 from './resources/chase-saaphire.png';
+import card5 from './resources/journey-student-rewards.png';
+import card6 from './resources/discover-it-student-cashback.png';
+import card7 from './resources/discover-it-student-chrome.png';
+
 const useStyles = makeStyles({
   card: {
     minWidth: 275,
@@ -19,7 +27,7 @@ const useStyles = makeStyles({
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    marginBottom: 12
   },
 });
 //Currently has limited params
@@ -32,6 +40,13 @@ function CardItem(props) {
         <Typography variant="h5" component="h2">
           {props.bank.typeOfCard}
         </Typography>
+        {props.bank["typeOfCard"] === "Discover It Secured" ? <img style={{width: '250px', height: '140px',padding: 0}} src={card1} /> : ""}
+            {props.bank["typeOfCard"] === "Capital One Secured Mastercard" ? <img style={{width: '250px', height: '140px',padding: 0}} src={card2}/> : ""}
+            {props.bank["typeOfCard"] === "Capital One Venture Rewards" ? <img style={{width: '250px', height: '140px',padding: 0}}  src={card3}/> : ""}
+            {props.bank["typeOfCard"] === "Chase Saaphire" ? <img style={{width: '250px', height: '140px',padding: 0}} src={card4}/> : ""}
+            {props.bank["typeOfCard"] === "Journey Student Rewards from Capital One" ? <img style={{width: '250px', height: '140px',padding: 0}}  src={card5}/> : ""}
+            {props.bank["typeOfCard"] === "Discover It Student Cash Back" ? <img style={{width: '250px', height: '140px',padding: 0}} src={card6} /> : ""}
+            {props.bank["typeOfCard"] === "Discover It Student Chrome" ? <img style={{width: '250px', height: '140px',padding: 0}}  src={card7}/> : ""}
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {props.bank.company}
         </Typography>
@@ -42,9 +57,9 @@ function CardItem(props) {
         </Typography>
         <Typography variant="body2" component="p">
           <p>{props.bank.cashBackDetails}</p>
-          <p>Good for Students: {props.bank.studentCard}</p>
-          <p>Gives Travel Rewards: {props.bank.travelCard}</p>
-          <p>Secured Card: {props.bank.securedCard}</p>
+          <p>Good for Students: {props.bank.studentCard ? "Yes" : "No"}</p>
+          <p>Gives Travel Rewards: {props.bank.travelCard ? "Yes" : "No"}</p>
+          <p>Secured Card: {props.bank.securedCard ? "Yes" : "No"}</p>
         </Typography>
       </CardContent>
       {/* Button would hyperlink to site */}

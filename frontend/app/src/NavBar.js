@@ -41,23 +41,38 @@ function NavBar() {
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange}>
           <Tab label="Home" />
-          <Tab label="Get a Credit Card" />
           <Tab label="Learn" />
+          <Tab label="Get a Credit Card" />
         </Tabs>
       </AppBar>
       {value === 0 && <TabContainer>
-          <HomePage />
-        </TabContainer>}
+        <HomePage />
+      </TabContainer>}
       {value === 1 &&
+        <TabContainer>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <div style={{ width: '54%', height: '50%', padding: '100px' }}>
+            <h2>We know that nobody understands those weird and complicated terms anyway.</h2>
+              <br></br>APR? Transfer Fees? <br></br>
+              It seems like banks are just trying to CONFUSE you. 
+              <br></br>We aren't like that. We've partnered with Capital One to educate you on the most important 
+                information. <br></br>
+              Go ahead. Try the bot below and start learning today.
+              
+          </div>
+        </Grid>
+        </TabContainer>}
+        {value === 2 &&
         <TabContainer>
           <QuestionPage />
         </TabContainer>}
-      {value === 2 &&
-        <TabContainer>
-          Get a Credit Card
-        </TabContainer>}
     </div>
-  );
-}
-
-export default NavBar;
+          );
+        }
+        
+        export default NavBar;
