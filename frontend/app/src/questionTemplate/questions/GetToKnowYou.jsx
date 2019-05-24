@@ -8,7 +8,7 @@ const backgroundStyle = {
   height: '500px'
 }
 
-var select = [false, false, false, false, false]
+var select = [false, false, false, false]
 
 class GetToKnowYou extends Component {
   constructor(props) {
@@ -21,7 +21,6 @@ class GetToKnowYou extends Component {
         'Business',
         'First-time card seeker',
         'Current/previous card holder (inluding joint card with parents)',
-        'None of the Above'
       ]
     }
   }
@@ -36,26 +35,29 @@ class GetToKnowYou extends Component {
 
   updateValue(e) {
     const value = e.target.value
+    console.log("Called", value)
     switch (value) {
-      case 0: 
+      case "0":
         select[0] = true
         select[1] = false
-      case 1:
+        break
+      case "1":
         select[0] = false
         select[1] = true
-      case 2: 
+        break
+      case "2":
         select[3] = false
         select[2] = true
-      case 3:
+        break
+      case "3":
         select[3] = true
         select[2] = false
-      case 4:
-        select[0] = false
-        select[1] = false
-        select[2] = false
-        select[3] = false
-        select[4] = true
+        break
+      default:
+        console.log("Went to default")
     }
+    console.log("Select", select)
+
   }
 
   renderChoice() {
@@ -64,6 +66,7 @@ class GetToKnowYou extends Component {
       row.push(
         <div>
           <input type='checkbox' value={choice}
+            checked={select[parseInt(choice)]}
             onChange={e => this.updateValue(e)} />
           {this.state.answers[choice]}
         </div>
