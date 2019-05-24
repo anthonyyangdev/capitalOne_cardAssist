@@ -25,7 +25,6 @@ const useStyles = makeStyles({
 //Currently has sample data, would have apr, fee, bank etc as params
 function CardItem() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   var ref = firebase.database().ref();
   var companyNames = "";

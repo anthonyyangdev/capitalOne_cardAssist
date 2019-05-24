@@ -63,11 +63,7 @@ class QuestionPage extends Component {
   }
 
   render() {
-    return (
-      <div style={backgroundStyle}>
-        {this.renderQuestion()}
-      </div>
-    )
+    return this.renderQuestion()
   }
 }
 
