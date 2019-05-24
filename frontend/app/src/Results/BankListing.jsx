@@ -8,12 +8,12 @@ class BankListing extends Component {
   }
 
   renderEachCard() {
-    var row = []
-
-    for (const card in this.props.cards) {
+    var data=fs.readFileSync('creditCards.json', 'utf8');
+    var results = JSON.parse(data);
+    for (const card in results) {
       console.log("Card", card)
       row.push(
-        <CardItem />
+        <CardItem bank = {card.company} />
       )
     }
 
