@@ -11,15 +11,11 @@ import WantSecuredCard from './questions/WantSecuredCard'
 import WantTransferFees from './questions/WantTransferFees'
 import WantTravelRewardCard from './questions/WantTravelRewardCard'
 import WhatIsMyCreditScore from './questions/WhatIsMyCreditScore'
-import BankResults from '../Results/BankResults'
 import BankListings from '../Results/BankListing'
-
-const backgroundStyle = {
-  backgroundColor: '#33ccff'
-}
 
 const creditCards = [
   {
+    "link": 'https://www.discover.com/credit-cards/student/it-card.html',
     "typeOfCard": "Discover It Student Cash Back",
     "company": "Discover",
     "standardAPR": 19.74,
@@ -43,6 +39,7 @@ const creditCards = [
     "securityDeposit": "NULL"
   },
   {
+    "link": 'https://www.discover.com/credit-cards/student/chrome-card.html',
     "typeOfCard": "Discover It Student Chrome",
     "company": "Discover",
     "standardAPR": 19.74,
@@ -66,6 +63,7 @@ const creditCards = [
     "securityDeposit": "NULL"
   },
   {
+    "link": 'https://www.capitalone.com/credit-cards/journey-student/',
     "typeOfCard": "Journey Student Rewards from Capital One",
     "company": "Capital One",
     "standardAPR": 26.99,
@@ -89,6 +87,7 @@ const creditCards = [
     "securityDeposit": "NULL"
   },
   {
+    "link": 'https://creditcards.chase.com/sapphire-credit-cards',
     "typeOfCard": "Chase Sapphire",
     "company": "Chase",
     "standardAPR": 21.74,
@@ -112,6 +111,7 @@ const creditCards = [
     "securityDeposit": "NULL"
   },
   {
+    "link": "https://www.capitalone.com/credit-cards/venture/",
     "typeOfCard": "Capital One Venture Rewards",
     "company": "Capital One",
     "standardAPR": 21.615,
@@ -135,6 +135,7 @@ const creditCards = [
     "securityDeposit": "NULL"
   },
   {
+    "link": "https://www.capitalone.com/credit-cards/secured-mastercard/",
     "typeOfCard": "Capital One Secured Mastercard",
     "company": "Capital One",
     "standardAPR": 26.99,
@@ -158,6 +159,7 @@ const creditCards = [
     "securityDeposit": 200
   },
   {
+    "link": "https://www.discover.com/credit-cards/secured/",
     "typeOfCard": "Discover It Secured",
     "company": "Discover",
     "standardAPR": 25.24,

@@ -29,23 +29,31 @@ function CardItem(props) {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {props.bank}
-        </Typography>
         <Typography variant="h5" component="h2">
-        {props.name}
+          {props.bank.company}
+        </Typography>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          {props.bank.typeOfCard}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          APR: {props.apr}%
-          Fee: ${props.fee}
+          <p>APR: {props.bank.standardAPR}%</p>
+          <p>Annual Fee: ${props.bank.annualFee}</p>
+          <p>Late Fee: ${props.bank.lateFee}</p>
         </Typography>
         <Typography variant="body2" component="p">
-        {props.description}
+          <p>{props.bank.cashBackDetails}</p>
+          <p>Good for Students: {props.bank.studentCard}</p>
+          <p>Gives Travel Rewards: {props.bank.travelCard}</p>
+          <p>Secured Card: {props.bank.securedCard}</p>
         </Typography>
       </CardContent>
       {/* Button would hyperlink to site */}
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button
+          size="small"
+          onClick={() => window.open(props.bank.link, "_blank")}>
+            Learn More
+          </Button>
       </CardActions>
     </Card>
   );

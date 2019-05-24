@@ -9,12 +9,12 @@ class BankListing extends Component {
 
   renderEachCard() {
     var row = []
-    // var data=fs.readFileSync('creditCards.json', 'utf8');
-    var data=this.props.data;
-    for (var i = 0; i<data.length; i++) {
-      
+    var data = this.props.data;
+    for (var i = 0; i < data.length; i++) {
       row.push(
-        <CardItem bank={data[i].company} />
+        <CardItem
+          bank={data[i]}
+        />
       )
     }
 
