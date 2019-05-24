@@ -21,7 +21,7 @@ class WantStudentCard extends Component {
   }
 
   renderQuestion() {
-    return
+    return <p></p>
   }
 
   renderAnswerTemplate() {
