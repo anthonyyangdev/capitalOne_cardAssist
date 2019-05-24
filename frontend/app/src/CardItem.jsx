@@ -30,10 +30,10 @@ function CardItem(props) {
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          {props.bank.company}
+        {props.bank.typeOfCard}
         </Typography>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {props.bank.typeOfCard}
+        {props.bank.company}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
           <p>APR: {props.bank.standardAPR}%</p>
