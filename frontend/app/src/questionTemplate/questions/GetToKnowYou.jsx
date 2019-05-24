@@ -8,8 +8,6 @@ const backgroundStyle = {
   height: '500px'
 }
 
-var select = [false, false, false, false]
-
 class GetToKnowYou extends Component {
   constructor(props) {
     super(props)
@@ -21,7 +19,8 @@ class GetToKnowYou extends Component {
         'Business',
         'First-time card seeker',
         'Current/previous card holder (inluding joint card with parents)',
-      ]
+      ],
+      select: [false, false, false, false]
     }
   }
 
@@ -35,29 +34,26 @@ class GetToKnowYou extends Component {
 
   updateValue(e) {
     const value = e.target.value
-    console.log("Called", value)
+    const e0 = this.state.select[0]
+    const e1 = this.state.select[1]
+    const e2 = this.state.select[2]
+    const e3 = this.state.select[3]
     switch (value) {
       case "0":
-        select[0] = true
-        select[1] = false
+        this.setState({ select: [true, false, e2, e3] })
         break
       case "1":
-        select[0] = false
-        select[1] = true
+        this.setState({ select: [false, true, e2, e3] })
         break
       case "2":
-        select[3] = false
-        select[2] = true
+        this.setState({ select: [e0, e1, true, false] })
         break
       case "3":
-        select[3] = true
-        select[2] = false
+        this.setState({ select: [e0, e1, false, true] })
         break
       default:
         console.log("Went to default")
     }
-    console.log("Select", select)
-
   }
 
   renderChoice() {
@@ -66,7 +62,7 @@ class GetToKnowYou extends Component {
       row.push(
         <div>
           <input type='checkbox' value={choice}
-            checked={select[parseInt(choice)]}
+            checked={this.state.select[parseInt(choice)]}
             onChange={e => this.updateValue(e)} />
           {this.state.answers[choice]}
         </div>
@@ -80,8 +76,16 @@ class GetToKnowYou extends Component {
   }
 
   handleNextPage() {
+    var isStudent = this.state.select[0]
+    var isBusiness = this.state.select[1]
+    var hasCard = this.state.select[3]
 
-    this.props.next({}, 3)
+    if ((!isStudent && !isBusiness) || (!hasCard) && (!this.state.select[2])) {
+      alert("Please indicate whether or not you are a student and if this will be your first card.")
+      return
+    }
+    
+    this.props.next({ isStudent, isBusiness, hasCard }, 3)
   }
 
   renderNext() {

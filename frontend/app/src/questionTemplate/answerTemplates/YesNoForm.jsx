@@ -3,11 +3,6 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 
 class YesNoForm extends Component {
-
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (<Box>
       <Button color="primary">

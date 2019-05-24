@@ -13,11 +13,14 @@ class WantCashBackRewards extends Component {
   }
 
   renderHeader() {
-    return <h1>Cash Back Reward Card</h1>
+    return <h1>Cash Back</h1>
   }
 
   renderQuestion() {
-    return <p>Do you want a cash back reward card?</p>
+    return <p>Do you require a card that offers cash back?
+    Many cards offer a percentage of cash back either on any purchase or on purchases at specific types of businesses.
+    Some cards, such as those that are more travel-focused, will not directly offer cash back, or at least not as much
+    as the value of their travel rewards.</p>
   }
 
   renderAnswerTemplate() {

@@ -59,7 +59,7 @@ class QuestionPage extends Component {
       case 10: return <WantTransferFees next={func} />
       case 11: return <WantTravelRewardCard next={func} />
       case 12: return <WhatIsMyCreditScore next={func} />
-      // case 13: return <HasStudentCard next={func} />
+      case 13: return <HasStudentCard next={func} />
       default: throw "Not the correct path."
     }
   }
